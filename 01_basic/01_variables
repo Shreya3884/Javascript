@@ -1,0 +1,12 @@
+const accountId=14453;
+let accountemail="shreya@gmail.com";
+var accountpassword="12345"
+accountcity="delhi";
+let accountsatte;
+
+
+// accountId=2 not allowed
+accountemail="sc@sc.com";
+console.table([accountId,accountemail,accountpassword,accountcity,accountsatte])
+
+// prefer not to use var because of issue of block scope and functional scope
