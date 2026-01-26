@@ -45,5 +45,16 @@ console.log(gameName.concat(" is a fun game")); //chess jain is a fun game
 console.log(gameName.trimStart()); //aage k space ko hta dega
 console.log(gameName.trimEnd()); //end k space ko hta dega
 
+let name="shreya";
+name[0]="p";
+console.log(name); //shreya //string is immuatble
+
+//String Comparison
+console.log("apple">"banana"); //false
+console.log("2">1); //true
+
+let a="shreya";
+a="manish";
+console.log(a);  //manish new m value assign hui h
 
 
