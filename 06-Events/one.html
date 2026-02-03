@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML EVENTS</title>
+</head>
+<body>
+    <h2>Amazing images</h2>
+    
+    
+    
+</body>
+<script>
+    document.getElementById(".owl").onclick=funtction(){
+        alert("owl click")
+    }
+    document.getElementById("owl").addEventListener("click",function(){
+    alert("owl clicked")})
+    //attachEvent()
+    document.getElementById("owl").addEventListeenr("click",function(e){
+        console.log(e);
+        },false)
+        //type,timestamp,defaultprevented
+        //target,toelement,srcelement,currenttarget
+        //clientx,client y,screen x ,offset
+        //altkey,shiftkey,keynode
+
+        //Event propogation ->bubling  
+        document.getElementById("images").addEventListener("click",function(e){
+            console.log("clicked inside the ul")
+        },false)
+
+        document.getElementByID("owl").addEventListeenr("click",function(){
+            console.log("owl clicked")
+            e.stopPropogation()
+        },false) // owl clicked
+        // if owl p click kiya toh owl clicked aaega and then image wala this is event propogation
+        //capturing mode-> ul captured and then owl if both true hoge tb
+     
+        document.getElementByID("google").addEventListeenr("click",function(e){
+
+            console.log("google clicked")
+            e.preventdefault()
+            e.stopPropogation() //preventDefault() is used to stop the browser’s default behavior for an event.
+            //  Capturing phase (top → target)
+
+// Target
+
+// Bubbling phase (target → top)
+        // },false)
+        
+
+//         document.getElementById("child").addEventListener("click", function (e) {
+//   e.stopPropagation();
+//   console.log("Child clicked");
+// });
+
+// document.getElementById("parent").addEventListener("click", function () {
+//   console.log("Parent clicked");
+// });
+ 
+// without stopPropogation output is child clikced and parents clikced
+// but with stop propogation output is only child clikced
+
+document.querySelector("#images").addEventListener("click",function(e){
+       console.log(e.target.tagName);
+       if(e.target.tagName==="IMG"){
+      //removeIt=e.target.parentNode
+    //   removeIt.remove()
+       }
+    console.log(e.target.parentNode);
+    let removeIt=e.target.parentNode
+    // removeIt.remove()
+    // removeIt.parentNOde.removeChild(removeIt)
+
+})
+
+    </script>
+
+</html>
