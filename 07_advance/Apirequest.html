@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const requesturl="http://api.github.com/users/shreyajain"
+
+        const xhr=new XMLHttpRequest()
+        xhr.open(requesturl) //request sendkrta h
+        console.log(xhr.readyState)
+        xhr.onreadystatechange=function(){ //har step pe readyState change hota hai → aur onreadystatechange call hota hai.
+            console.log(xhr.readyState)
+            if(xhr.readyState===4){
+                const data=JSON.parse(this.responsetext)
+                console.log(data)
+                console.log(data.followers)
+            }
+             //response url se string m aata h to convert it into json.parse
+        }
+
+        xhr.send();
+    </script>
+</body>
+</html>
