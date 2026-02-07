@@ -112,3 +112,22 @@ async function getallUsers(){
 }
 
 getallUsers()
+
+
+// fetch api
+
+// node js m browser nhi h 
+
+// teh xmlhttp request became so difficult callback hells ko handle kran difficult h and asssynchrom=nous task ko perform krna difficult h
+
+// fetch api-> teh global fetch() method starts the process of fetching a resource from a network ,returning a promise which is fullfilled once the response is available 
+
+// promise se request kri and appko error aa gya 404 woh kha milega...->as a response milega and error us case m aaega jis case m request kr hi nhi paya h onfilled m hi count hot ah
+// 
+// const response=fetch("something")
+// fetch->1. data-> onfilled[]
+//                  onrejection[]
+
+// 2.->web browser based api handle kr lega and or Node
+// network request -> agr gyi toh onfilled m jaegi and agr nhi gyi toh onrejection m jaegi
+// ek bar data fullfilled ho gya toh response ko fullfilled krega jo ki global memory m store h
