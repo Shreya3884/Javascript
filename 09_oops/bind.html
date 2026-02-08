@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Click</button>
+
+</body>
+<script>
+    class React{
+        constructor(){
+            this.library="React"
+            this.server="https://localhost:300"
+            // requirement
+            document.querySelector("button").addEventListener("click",this.handleclick.bind(this))
+        }
+        handleclick(){
+            console.log("button clicked")
+            console.log(this.server);
+        }
+    }
+    const app=new React()
+    </script>
+</html>
+
+<!-- bind() is used to permanently set the value of this for a function.
+
+It does not execute the function.
+It returns a new function with this fixed. -->
+
+<!-- Why do we need bind?
+
+Because in JavaScript, this changes depending on how a function is called, not where it’s written -->
+
+<!-- const person = {
+  name: "Sam",
+  sayName() {
+    console.log(this.name);
+  }
+};
+
+setTimeout(person.sayName, 1000);
+// ❌ undefined (or error in strict mode)
+ --> sayname is passed as a plain function looses this
+
+ <!-- Fix using bind
+setTimeout(person.sayName.bind(person), 1000);
+// ✅ Sam
+
+
+Now this is locked to person. -->
