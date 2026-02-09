@@ -13,3 +13,4 @@ const user={
 const tea=Object.create(user)
 console.log(tea._password)
 console.log(tea.email)
+
